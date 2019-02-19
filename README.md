@@ -1,7 +1,7 @@
 6-Axis Digital Accelerometer&Gyroscope(ADIS16470)
 =================================  
 
-![6-Axis Digital Accelerometer&Gyroscope(ADIS16470)](https://github.com/linux-downey/Grove_touch_sensor_MPR121/blob/master/MPR121_module.png)  
+![6-Axis Digital Accelerometer&Gyroscope(ADIS16470)](https://github.com/Jenkinlu001/Seeed_Picture/blob/master/ADIS16470.jpg)  
 
 
 Introduction of sensor
