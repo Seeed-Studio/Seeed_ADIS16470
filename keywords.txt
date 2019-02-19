@@ -1,0 +1,44 @@
+ #######################################
+# Syntax Coloring Map For 6-Axis Digital Accelerometer&Gyroscope(ADIS16470)
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+IMU	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+configSPI()	KEYWORD1
+regRead	    KEYWORD1
+regWrite	KEYWORD1
+checksum	KEYWORD1
+accelScale	KEYWORD1
+gyroScale	KEYWORD1
+tempScale	KEYWORD1
+deltaAngleScale	KEYWORD1
+deltaVelocityScale	KEYWORD1
+
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+DIAG_STAT	LITERAL1
+TEMP_OUT	LITERAL1
+
+TIME_STAMP 	LITERAL1
+FILT_CTRL	LITERAL1
+MSC_CTRL  	LITERAL1
+DEC_RATE 	LITERAL1
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+
+
+
