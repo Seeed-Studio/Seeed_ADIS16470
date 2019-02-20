@@ -105,7 +105,7 @@ void loop()
     SERIAL.print("checksum: ");
     SERIAL.println(burstChecksum,HEX);
   */
-
+  SERIAL.println("Version:v1.0");
   // Print scaled gyro data
   SERIAL.print("XGYRO(degrees/sec): ");
   SERIAL.println(GXS);
