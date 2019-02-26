@@ -92,28 +92,25 @@
 
 
 
-class ADIS16470 
-{
+class ADIS16470 {
+    public:
+        ADIS16470(int CS);//Initialize
+        ~ADIS16470();
+        void configSPI();// Sets SPI BitOrder,ClockDivider,DataMode
+        int16_t regRead(uint8_t regAddr);// Read register 
+        int regWrite(uint8_t regAddr, int16_t regData); // Write register
+        uint8_t  *byteBurst(void);// Burstread byte
+        uint16_t *wordBurst(void);// Bytes are converted to words
+        int16_t  checksum(uint16_t * burstArray);// Calculate checksum
+        float accelScale(int16_t sensorData);// Calculate accelerator data
+        float gyroScale(int16_t sensorData);// Calculate gyro data
+        float tempScale(int16_t sensorData); // Calculate temperature data
+        float deltaAngleScale(int16_t sensorData); // Calculate delta angle data
+        float deltaVelocityScale(int16_t sensorData); // Calculate delta velocity
+        uint16_t *wordData(uint8_t *burstdata);// Bytes are converted to words
 
-  public:
-   
-    ADIS16470(int CS);//Initialize
-    ~ADIS16470();
-    void configSPI();// Sets SPI BitOrder,ClockDivider,DataMode
-    int16_t regRead(uint8_t regAddr);// Read register 
-    int regWrite(uint8_t regAddr, int16_t regData); // Write register
-    uint8_t  *byteBurst(void);// Burstread byte
-    uint16_t *wordBurst(void);// Bytes are converted to words
-    int16_t  checksum(uint16_t * burstArray);// Calculate checksum
-    float accelScale(int16_t sensorData);// Calculate accelerator data
-    float gyroScale(int16_t sensorData);// Calculate gyro data
-    float tempScale(int16_t sensorData); // Calculate temperature data
-    float deltaAngleScale(int16_t sensorData); // Calculate delta angle data
-    float deltaVelocityScale(int16_t sensorData); // Calculate delta velocity
-    uint16_t *wordData(uint8_t *burstdata);// Bytes are converted to words
-
-  private:
-    int _CS;
-    int time = 20;
+    private:
+        int _CS;
+        int time = 20;
 
 };
