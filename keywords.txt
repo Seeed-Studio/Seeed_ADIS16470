@@ -1,5 +1,5 @@
  #######################################
-# Syntax Coloring Map For 6-Axis Digital Accelerometer&Gyroscope(ADIS16470)
+# Syntax Coloring Map For Grove - 6-Axis Digital Accelerometer&Gyroscope ±40g (ADIS16470)
 #######################################
 
 #######################################
