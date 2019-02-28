@@ -1,7 +1,8 @@
-6-Axis Digital Accelerometer&Gyroscope(ADIS16470)
+Grove - 6-Axis Digital Accelerometer&Gyroscope ±40g (ADIS16470)
 =================================  
 
-![6-Axis Digital Accelerometer&Gyroscope(ADIS16470)](https://github.com/Jenkinlu001/Seeed_Picture/blob/master/ADIS16470.jpg)  
+![Grove - 6-Axis Digital Accelerometer&Gyroscope ±40g (ADIS16470)
+](https://github.com/Jenkinlu001/Seeed_Picture/blob/master/ADIS16470.jpg)  
 
 
 Introduction of sensor
