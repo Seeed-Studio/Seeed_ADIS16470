@@ -1,31 +1,31 @@
 /*  BurstRead_demo.ino
-/*
- *  
- * Copyright (c) 2019 Seeed Technology Co., Ltd.
- * Website    : www.seeed.cc
- * Create Time: February 2019
- * Change Log :
- *
- * The MIT License (MIT)
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
+    /*
+
+    Copyright (c) 2019 Seeed Technology Co., Ltd.
+    Website    : www.seeed.cc
+    Create Time: February 2019
+    Change Log :
+
+    The MIT License (MIT)
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+    THE SOFTWARE.
+*/
 
 #include <Seeed_ADIS16470.h>
 #include <Wire.h>
@@ -37,7 +37,7 @@
 #endif
 
 uint8_t burstdata[21];
-uint16_t *wordData;
+uint16_t* wordData;
 // Accelerometer
 float AXS, AYS, AZS = 0;
 
@@ -65,16 +65,15 @@ void setup() {
     SERIAL.begin(9600);  // start serial for output
 }
 
-void loop() 
-{
+void loop() {
     Wire.requestFrom(0x36, 21);    // request 10 bytes + Version from slave device 0x36
-    int i=0;
+    int i = 0;
     while (Wire.available()) { // slave may send less than requested
-      uint8_t c = Wire.read(); // receive a byte as character
-      burstdata[i] = c;
-      i++;
-      //SERIAL.print(c,HEX);
-      //SERIAL.print("  ");
+        uint8_t c = Wire.read(); // receive a byte as character
+        burstdata[i] = c;
+        i++;
+        //SERIAL.print(c,HEX);
+        //SERIAL.print("  ");
     }
     i = 0;
 
@@ -83,10 +82,10 @@ void loop()
 
     //print the array of burstread and checksum
     /*
-      int s = 0;
-      uint32_t burstChecksum = 0;
-      for(int i = 0; i < 21; i++)
-      {
+        int s = 0;
+        uint32_t burstChecksum = 0;
+        for(int i = 0; i < 21; i++)
+        {
           if(i < 18)
           {
               s += burstdata[i];
@@ -99,11 +98,11 @@ void loop()
           SERIAL.print(burstdata[i], HEX);
           SERIAL.print("  ");
           if(i%5 == 0)SERIAL.println();
-      }
-      SERIAL.print("checksum: ");
-      SERIAL.println(burstChecksum, HEX);
+        }
+        SERIAL.print("checksum: ");
+        SERIAL.println(burstChecksum, HEX);
     */
-   
+
     SERIAL.print("Version:v");
     SERIAL.println(burstdata[20]);
     // Print scaled gyro data

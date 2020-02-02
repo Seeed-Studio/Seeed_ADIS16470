@@ -1,32 +1,32 @@
 
 /*  Seeed_ADIS16470.h
-/*
- *  
- * Copyright (c) 2019 Seeed Technology Co., Ltd.
- * Website    : www.seeed.cc
- * Create Time: February 2019
- * Change Log :
- *
- * The MIT License (MIT)
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
+    /*
+
+    Copyright (c) 2019 Seeed Technology Co., Ltd.
+    Website    : www.seeed.cc
+    Create Time: February 2019
+    Change Log :
+
+    The MIT License (MIT)
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+    THE SOFTWARE.
+*/
 
 #define Seeed_ADIS16470_h
 #include "Arduino.h"
@@ -93,24 +93,24 @@
 
 
 class ADIS16470 {
-    public:
-        ADIS16470(int CS);//Initialize
-        ~ADIS16470();
-        void configSPI();// Sets SPI BitOrder,ClockDivider,DataMode
-        int16_t regRead(uint8_t regAddr);// Read register 
-        int regWrite(uint8_t regAddr, int16_t regData); // Write register
-        uint8_t  *byteBurst(void);// Burstread byte
-        uint16_t *wordBurst(void);// Bytes are converted to words
-        int16_t  checksum(uint16_t * burstArray);// Calculate checksum
-        float accelScale(int16_t sensorData);// Calculate accelerator data
-        float gyroScale(int16_t sensorData);// Calculate gyro data
-        float tempScale(int16_t sensorData); // Calculate temperature data
-        float deltaAngleScale(int16_t sensorData); // Calculate delta angle data
-        float deltaVelocityScale(int16_t sensorData); // Calculate delta velocity
-        uint16_t *wordData(uint8_t *burstdata);// Bytes are converted to words
+  public:
+    ADIS16470(int CS);//Initialize
+    ~ADIS16470();
+    void configSPI();// Sets SPI BitOrder,ClockDivider,DataMode
+    int16_t regRead(uint8_t regAddr);// Read register
+    int regWrite(uint8_t regAddr, int16_t regData); // Write register
+    uint8_t*  byteBurst(void);// Burstread byte
+    uint16_t* wordBurst(void);// Bytes are converted to words
+    int16_t  checksum(uint16_t* burstArray); // Calculate checksum
+    float accelScale(int16_t sensorData);// Calculate accelerator data
+    float gyroScale(int16_t sensorData);// Calculate gyro data
+    float tempScale(int16_t sensorData); // Calculate temperature data
+    float deltaAngleScale(int16_t sensorData); // Calculate delta angle data
+    float deltaVelocityScale(int16_t sensorData); // Calculate delta velocity
+    uint16_t* wordData(uint8_t* burstdata);// Bytes are converted to words
 
-    private:
-        int _CS;
-        int time = 20;
+  private:
+    int _CS;
+    int time = 20;
 
 };
