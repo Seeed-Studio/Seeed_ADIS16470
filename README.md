@@ -1,4 +1,4 @@
-Grove - 6-Axis Digital Accelerometer&Gyroscope ±40g (ADIS16470)
+Grove - 6-Axis Digital Accelerometer&Gyroscope ±40g (ADIS16470)  [![Build Status](https://travis-ci.com/Seeed-Studio/Seeed_ADIS16470.svg?branch=master)](https://travis-ci.com/Seeed-Studio/Seeed_ADIS16470)
 =================================  
 
 ![Grove - 6-Axis Digital Accelerometer&Gyroscope ±40g (ADIS16470)
