@@ -1,5 +1,6 @@
 Grove - 6-Axis Digital Accelerometer&Gyroscope ±40g (ADIS16470)  [![Build Status](https://travis-ci.com/Seeed-Studio/Seeed_ADIS16470.svg?branch=master)](https://travis-ci.com/Seeed-Studio/Seeed_ADIS16470)
 =================================  
+[![Compile Examples](https://github.com/Seeed-Studio/Seeed_ADIS16470/workflows/Compile%20Examples/badge.svg)](https://github.com/Seeed-Studio/Seeed_ADIS16470/actions?workflow=Compile+Examples)
 
 ![Grove - 6-Axis Digital Accelerometer&Gyroscope ±40g (ADIS16470)
 ](https://github.com/Jenkinlu001/Seeed_Picture/blob/master/ADIS16470.jpg)  
